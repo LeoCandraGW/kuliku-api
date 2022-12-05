@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiLoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KuliController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::middleware('auth:api')->get('/user/kuliku', function () {
 });
 
 Route::post('login', [ApiLoginController::class, 'login']);
+Route::apiResource('kuli', KuliController::class);
+Route::get('kuli/{id}', [KuliController::class, 'kuli']);
