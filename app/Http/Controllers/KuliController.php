@@ -56,7 +56,7 @@ class KuliController extends Controller
     public function show(Kuli $kuli)
     {
         return response()->json([
-            'data' => $kuli
+            $kuli
         ]);
     }
 
