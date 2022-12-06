@@ -7,14 +7,6 @@ use Illuminate\Http\Request;
 
 class KuliController extends Controller
 {
-
-    public function kuli($id){
-        $kuli = Kuli::where('id',$id);
-
-        return response()->json([
-            'data' => $kuli
-        ]);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -24,6 +16,7 @@ class KuliController extends Controller
     {
         $kulis = Kuli::all();
         return response()->json([
+            'success'=> true,
             'data'=>$kulis
         ]);
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class ApiLoginController extends Controller
 {
@@ -36,5 +37,22 @@ class ApiLoginController extends Controller
                 401
             );
         }
+    }
+
+    public function register(Request $req){
+        $password = bcrypt($req->password);
+        $data = User::create([
+            'name' => $req->username,
+            'email' => $req->email,
+            'password' => $password
+        ]);
+        return response()->json(
+            [
+                'success' => true,
+                'data' => $data,
+                'pesan' => 'login berhasil'
+            ],
+            200
+        );
     }
 }
