@@ -61,9 +61,7 @@ class TransaksiController extends Controller
      */
     public function show(transaksi $transaksi)
     {
-        return response()->json([
-            'data' => $transaksi
-        ]);
+        return $transaksi->toJson();
     }
     /**
      * Update the specified resource in storage.

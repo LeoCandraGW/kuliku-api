@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class KuliController extends Controller
 {
+
+    public function kuliskill($skill)
+    {
+        $kuli = Kuli::where('skill',$skill)->get();
+
+        return response()->json([
+            'success' => true,
+            'data' => $kuli
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
