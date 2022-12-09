@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiLoginController;
+use App\Http\Controllers\CarouselSliderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KuliController;
@@ -30,3 +31,4 @@ Route::apiResource('kuli', KuliController::class);
 Route::get('kuli/{id}', [KuliController::class, 'kuli']);
 Route::get('kuliskill/{skill}', [KuliController::class, 'kuliskill']);
 Route::apiResource('transaksi', TransaksiController::class);
+Route::apiResource('carousel', CarouselSliderController::class);

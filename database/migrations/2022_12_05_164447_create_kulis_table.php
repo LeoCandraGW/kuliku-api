@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('skill',['house','yard','renovate','makeover','homecare']);
             $table->string('nohp');
             $table->string('dailysal');
-            $table->string('image');
+            $table->string('image')->default('image/default.jpg');
             $table->string('deskripsi');
             $table->string('nik');
             $table->string('alamat');
